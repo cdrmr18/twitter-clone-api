@@ -1,22 +1,15 @@
 const express = require("express");
 const app = express();
 const port = 3000
-const axios = require('axios');
+require('dotenv').config();
+const Twitter = require('./api/helpers/twitter.js');
+const twitter = new Twitter();
 
 app.get('/tweets', (req,res) => {
-    console.log(req.query)
     const query = req.query.query
     const max_results = req.query.max_results
 
-    axios.get("https://api.twitter.com/2/tweets/search/recent",  {
-        params: {
-            query: query,
-            max_results: max_results
-        },
-        headers: {
-            "Authorization": ""
-        }
-    }).then((response) =>{
+    twitter.get(query, max_results).then((response) =>{
             res.status(200).send(response.data)
         }).catch((error)=>{
             res.status(400).send(error);
@@ -24,5 +17,3 @@ app.get('/tweets', (req,res) => {
 })
 
 app.listen(port, () => console.log(`Listening on port ${port}`))
-
-
