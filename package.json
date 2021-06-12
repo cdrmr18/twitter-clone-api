@@ -1,0 +1,22 @@
+{
+  "name": "twitter-clone-api",
+  "version": "1.0.0",
+  "description": "Practice using REST APIs with Twitter API",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cdrmr18/twitter-clone-api.git"
+  },
+  "author": "Kathy Tavia",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cdrmr18/twitter-clone-api/issues"
+  },
+  "homepage": "https://github.com/cdrmr18/twitter-clone-api#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
